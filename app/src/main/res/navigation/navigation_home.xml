@@ -10,9 +10,16 @@
         android:name="com.mymind.ui.screens.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+
     <fragment
+        android:id="@+id/moodListFragment"
+        android:name="com.mymind.ui.screens.MoodList"
+        android:label="MoodList"
+        tools:layout="@layout/fragment_mood_list"/>
+
+    <!--<fragment
         android:id="@+id/newMoodFragment"
         android:name="com.mymind.ui.screens.NewMoodFragment"
         android:label="NewMoodFragment"
-        tools:layout="@layout/new_mood_layout"/>
+        tools:layout="@layout/fragment_new_mood_layout"/>-->
 </navigation>

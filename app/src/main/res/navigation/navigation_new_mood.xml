@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_new_mood"
+    app:startDestination="@id/newMoodFragment">
+
+    <fragment
+        android:id="@+id/newMoodFragment"
+        android:name="com.mymind.ui.screens.NewMoodFragment"
+        android:label="NewMoodFragment" />
+</navigation>

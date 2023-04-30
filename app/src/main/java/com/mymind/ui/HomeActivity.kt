@@ -2,10 +2,9 @@ package com.mymind.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.mymind.R
 import com.mymind.core.BaseActivity
 import com.mymind.databinding.ActivityHomeBinding
+import com.mymind.ui.screens.HomeCarouselRealisation
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
@@ -15,5 +14,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     ) = ActivityHomeBinding.inflate(inflater, container, false)
 
     override fun ActivityHomeBinding.initializeLayout() {
+        // HomeCarouselRealisation(viewPager)
+        viewPager.adapter = HomeCarouselRealisation(supportFragmentManager, lifecycle)
     }
 }
