@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/moodListFragment"
-        android:name="com.mymind.ui.screens.MoodList"
+        android:name="com.mymind.ui.screens.MoodListFragment"
         android:label="MoodList"
         tools:layout="@layout/fragment_mood_list"/>
 

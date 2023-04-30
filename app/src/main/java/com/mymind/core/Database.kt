@@ -4,19 +4,25 @@ import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.query.RealmResults
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Database {
 
-    private val config = RealmConfiguration.create(schema = setOf(UserMoodModel::class))
+    private val config = RealmConfiguration.Builder(
+        schema = setOf(UserMoodModel::class)
+    ).schemaVersion(2).build()
+
     private val realm: Realm = Realm.open(config)
 
-    fun setTime(minute: Int, hour: Int, ampm: Boolean) {
+    fun setTime(minute: Int, hour: Int) {
         realm.writeBlocking {
             copyToRealm(
                 UserMoodModel().apply {
                     this.minute = minute
                     this.hour = hour
-                    this.ampm = ampm
+                    val dt = SimpleDateFormat("dd.MM.yyyy")
+                    this.date = dt.format(Calendar.getInstance().time)
                 }
             )
         }

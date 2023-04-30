@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mymind.R
 
-open class BaseCarousel(private val viewPager2: ViewPager2/*, private val tabLayout: TabLayout*/) {
+open class BaseCarousel(private val viewPager2: ViewPager2) {
 
     open val demoData = arrayListOf(
         R.drawable.cat_mood1,
