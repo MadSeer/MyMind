@@ -15,7 +15,7 @@ class Database {
 
     private val realm: Realm = Realm.open(config)
 
-    fun setTime(minute: Int, hour: Int) {
+    fun setMoodData(minute: String, hour: String, mood: Int, commentary: String) {
         realm.writeBlocking {
             copyToRealm(
                 UserMoodModel().apply {
@@ -23,28 +23,18 @@ class Database {
                     this.hour = hour
                     val dt = SimpleDateFormat("dd.MM.yyyy")
                     this.date = dt.format(Calendar.getInstance().time)
-                }
-            )
-        }
-    }
 
-    fun setMood(mood: Int) {
-        realm.writeBlocking {
-            copyToRealm(
-                UserMoodModel().apply {
                     this.mood = mood
-                }
-            )
-        }
-    }
-
-    fun setCommentary(commentary: String) {
-        realm.writeBlocking {
-            copyToRealm(
-                UserMoodModel().apply {
                     this.commentary = commentary
                 }
             )
+        }
+    }
+
+    fun changeMood(uuid: UUID) {
+        realm.writeBlocking {
+            realm.query<UserMoodModel>("id == %0", uuid.toString()).first().apply {
+            }
         }
     }
 

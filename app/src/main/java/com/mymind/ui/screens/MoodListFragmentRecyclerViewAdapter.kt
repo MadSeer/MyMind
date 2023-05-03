@@ -11,7 +11,7 @@ import com.mymind.core.UserMoodModel
 import io.realm.kotlin.query.RealmResults
 
 class MoodListFragmentRecyclerViewAdapter(
-    private var dataBase: RealmResults<UserMoodModel>
+    private var dataBase: RealmResults<UserMoodModel>,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

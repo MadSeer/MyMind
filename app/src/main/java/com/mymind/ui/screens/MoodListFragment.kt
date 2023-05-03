@@ -17,6 +17,7 @@ class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {
     override fun FragmentMoodListBinding.initializeLayout() {
         val rvMood = recyclerViewMoodList
         val db = Database().getData() // !!!!!
+
         val adapter = MoodListFragmentRecyclerViewAdapter(db)
         rvMood.adapter = adapter
         rvMood.layoutManager = LinearLayoutManager(requireContext())

@@ -24,9 +24,12 @@ class NewMoodFragment : BaseFragment<FragmentNewMoodLayoutBinding>() {
         writeMood.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 var db = Database()
-                db.setMood(viewPager.currentItem)
-                db.setCommentary(moodCommentaryPlainText.text.toString())
-                db.setTime(timePicker1.minute, timePicker1.hour)
+                db.setMoodData(
+                    timePicker1.minute.toString(),
+                    timePicker1.hour.toString(),
+                    viewPager.currentItem,
+                    moodCommentaryPlainText.text.toString()
+                )
                 lifecycleScope.launch(Dispatchers.Main) {
                     requireActivity().finish()
                 }

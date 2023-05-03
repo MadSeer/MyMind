@@ -11,8 +11,8 @@ class UserMoodModel() : RealmObject {
     @PrimaryKey
     var id: UUID = UUID.randomUUID()
     var commentary: String = ""
-    var minute: Int = 0
-    var hour: Int = 0
+    var minute: String = "0"
+    var hour: String = "0"
     var mood: Int = 0
     var date: String = ""
 }

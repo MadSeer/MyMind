@@ -55,7 +55,7 @@
 
             <EditText
                 android:id="@+id/moodCommentaryPlainText"
-                android:layout_width="387dp"
+                android:layout_width="match_parent"
                 android:layout_height="102dp"
                 android:ems="10"
                 android:gravity="start|top"
