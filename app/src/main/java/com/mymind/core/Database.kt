@@ -19,8 +19,14 @@ class Database {
         realm.writeBlocking {
             copyToRealm(
                 UserMoodModel().apply {
-                    this.minute = minute
-                    this.hour = hour
+                    if (minute.length <2) {
+                        this.minute = "0" + minute
+                    } else this.minute = minute
+
+                    if (hour.length <2) {
+                        this.hour = "0" + hour
+                    } else this.hour = hour
+
                     val dt = SimpleDateFormat("dd.MM.yyyy")
                     this.date = dt.format(Calendar.getInstance().time)
 
