@@ -3,11 +3,7 @@ package com.mymind.ui.screens
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.mymind.R
-import com.mymind.core.BaseFragment
-import com.mymind.databinding.ActivityHomeBinding
-import com.mymind.databinding.ActivityNewMoodBinding
+import com.mymind.core.base.BaseFragment
 import com.mymind.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {

@@ -1,7 +1,6 @@
-package com.mymind.core
+package com.mymind.core.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity

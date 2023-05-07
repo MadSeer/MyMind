@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.listapp.MoodListFragmentRecyclerViewAdapter
-import com.mymind.core.BaseFragment
 import com.mymind.core.Database
+import com.mymind.core.base.BaseFragment
 import com.mymind.databinding.FragmentMoodListBinding
 
 class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {

@@ -2,7 +2,7 @@ package com.mymind.ui.screens
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.mymind.core.BaseActivity
+import com.mymind.core.base.BaseActivity
 import com.mymind.databinding.ActivityNewMoodBinding
 
 class NewMoodActivity : BaseActivity<ActivityNewMoodBinding>() {

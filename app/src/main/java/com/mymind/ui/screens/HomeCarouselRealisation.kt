@@ -12,7 +12,8 @@ class HomeCarouselRealisation(
 
     val demoData = arrayListOf(
         HomeFragment(),
-        MoodListFragment()
+        MoodListFragment(),
+        StatisticsFragment()
     )
 
     override fun getItemCount(): Int {
