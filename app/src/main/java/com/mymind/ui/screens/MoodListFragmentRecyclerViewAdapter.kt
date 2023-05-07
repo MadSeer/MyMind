@@ -24,7 +24,7 @@ class MoodListFragmentRecyclerViewAdapter(
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
 
-        val moodCardData: UserMoodModel = dataBase.toList().get(position)
+        val moodCardData: UserMoodModel = dataBase.toList().asReversed().get(position)
         val imageView = viewHolder.itemView.findViewById<ImageView>(R.id.imageViewMoodCard)
         val commentaryTextView = viewHolder.itemView.findViewById<TextView>(R.id.textViewCommentary)
         val timeTextView = viewHolder.itemView.findViewById<TextView>(R.id.textViewTime)
