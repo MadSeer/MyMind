@@ -10,16 +10,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMind"
+        android:name=".GeneralApplication"
         tools:targetApi="33">
         <activity
             android:name=".ui.HomeActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.MyMind">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:label="@string/app_name" android:name=".ui.screens.NewMoodActivity"/>
+
     </application>
 
 </manifest>

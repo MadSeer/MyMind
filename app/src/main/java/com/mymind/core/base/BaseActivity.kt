@@ -1,7 +1,6 @@
-package com.mymind.core
+package com.mymind.core.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +10,8 @@ abstract class BaseActivity<T : ViewBinding> : AppCompatActivity() {
 
     lateinit var binding: T
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = setupBinding(LayoutInflater.from(this), null)
         setContentView(binding.root)
         binding.initializeLayout()
