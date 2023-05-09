@@ -3,8 +3,12 @@ package com.mymind.ui.screens
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import com.mymind.core.QuoteAPI
 import com.mymind.core.base.BaseFragment
 import com.mymind.databinding.FragmentHomeBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun setupBinding(
@@ -17,7 +21,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         button.setOnClickListener {
             val intent = Intent(activity, NewMoodActivity::class.java)
             activity?.startActivity(intent)
-            // findNavController().navigate(R.id.newMoodFragment)
+        }
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            QuoteAPI().getResponse { response ->
+                lifecycleScope.launch(Dispatchers.Main) {
+                    quoteTextViev.text = response
+                }
+            }
         }
     }
 }
