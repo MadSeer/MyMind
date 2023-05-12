@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.tabs.TabLayoutMediator
+import com.mymind.R
 import com.mymind.core.Database
 import com.mymind.core.base.BaseFragment
+import com.mymind.databinding.ActivityHomeBinding
 import com.mymind.databinding.FragmentNewMoodLayoutBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

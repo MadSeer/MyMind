@@ -1,5 +1,6 @@
 package com.mymind.core
 
+import android.view.View
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
