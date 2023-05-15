@@ -7,23 +7,23 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mymind.ui.screens.HomeFragment"
+        android:name="com.mymind.ui.screens.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/moodListFragment"
-        android:name="com.mymind.ui.screens.MoodListFragment"
+        android:name="com.mymind.ui.screens.moodList.MoodListFragment"
         android:label="MoodList"
         tools:layout="@layout/fragment_mood_list"/>
     <fragment
         android:id="@+id/statisticsFragment"
-        android:name="com.mymind.ui.screens.StatisticsFragment"
+        android:name="com.mymind.ui.screens.statistics.StatisticsFragment"
         android:label="StatisticsFragment" />
 
     <!--<fragment
         android:id="@+id/newMoodFragment"
-        android:name="com.mymind.ui.screens.NewMoodFragment"
+        android:name="com.mymind.ui.screens.newMood.NewMoodFragment"
         android:label="NewMoodFragment"
         tools:layout="@layout/fragment_new_mood_layout"/>-->
 </navigation>

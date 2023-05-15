@@ -1,4 +1,4 @@
-package com.mymind.ui.screens
+package com.mymind.ui.screens.home
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.mymind.core.QuoteAPI
 import com.mymind.core.base.BaseFragment
 import com.mymind.databinding.FragmentHomeBinding
+import com.mymind.ui.screens.newMood.NewMoodActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

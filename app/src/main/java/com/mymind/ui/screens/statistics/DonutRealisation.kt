@@ -1,9 +1,8 @@
-package com.mymind.ui.screens
+package com.mymind.ui.screens.statistics
 
 import android.graphics.Color
 import app.futured.donut.DonutProgressView
 import app.futured.donut.DonutSection
-import com.mymind.core.StatisticsModel
 
 class DonutRealisation(var donut: DonutProgressView, var statistic: StatisticsModel) {
 
@@ -37,8 +36,6 @@ class DonutRealisation(var donut: DonutProgressView, var statistic: StatisticsMo
             color = Color.parseColor("#3F3244"),
             amount = statistic.veryGood.toFloat()
         )
-
-        donut.cap = statistic.sum.toFloat()
         donut.submitData(
             listOf(
                 section1,
@@ -48,5 +45,6 @@ class DonutRealisation(var donut: DonutProgressView, var statistic: StatisticsMo
                 section5
             )
         )
+        donut.cap = statistic.sum.toFloat()
     }
 }

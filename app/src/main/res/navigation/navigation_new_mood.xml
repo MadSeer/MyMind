@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/newMoodFragment"
-        android:name="com.mymind.ui.screens.NewMoodFragment"
+        android:name="com.mymind.ui.screens.newMood.NewMoodFragment"
         android:label="NewMoodFragment" />
 </navigation>

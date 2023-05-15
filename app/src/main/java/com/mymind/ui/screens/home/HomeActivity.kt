@@ -1,10 +1,9 @@
-package com.mymind.ui
+package com.mymind.ui.screens.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.mymind.core.base.BaseActivity
 import com.mymind.databinding.ActivityHomeBinding
-import com.mymind.ui.screens.HomeCarouselRealisation
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
@@ -14,7 +13,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     ) = ActivityHomeBinding.inflate(inflater, container, false)
 
     override fun ActivityHomeBinding.initializeLayout() {
-        // HomeCarouselRealisation(viewPager)
         viewPager.adapter = HomeCarouselRealisation(supportFragmentManager, lifecycle)
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"))
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"))
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"))
     }
 }

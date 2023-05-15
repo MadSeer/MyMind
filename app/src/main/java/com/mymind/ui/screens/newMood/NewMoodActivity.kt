@@ -1,4 +1,4 @@
-package com.mymind.ui.screens
+package com.mymind.ui.screens.newMood
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

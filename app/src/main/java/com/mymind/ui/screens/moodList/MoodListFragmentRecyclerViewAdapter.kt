@@ -1,4 +1,4 @@
-package com.example.listapp
+package com.mymind.ui.screens.moodList
 
 import android.view.LayoutInflater
 import android.view.View

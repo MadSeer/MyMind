@@ -1,26 +1,23 @@
-package com.mymind.ui.screens
+package com.mymind.ui.screens.moodList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.listapp.MoodListFragmentRecyclerViewAdapter
-import com.mymind.core.Database
 import com.mymind.core.UserMoodModel
 import com.mymind.core.base.BaseFragment
 import com.mymind.databinding.FragmentMoodListBinding
 import io.realm.kotlin.query.RealmResults
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {
 
-    val viewModel = MoodListViewModel()
+    private val viewModel: MoodListViewModel by viewModel()
     override fun setupBinding(
         layoutInflater: LayoutInflater,
         container: ViewGroup?
     ) = FragmentMoodListBinding.inflate(layoutInflater, container, false)
 
     override fun FragmentMoodListBinding.initializeLayout() {
-        // db = Database().getData() // !!!!!
-
         viewModel.mooddbLiveData.observe(viewLifecycleOwner, ::handleList)
     }
 

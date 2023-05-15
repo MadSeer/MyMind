@@ -14,7 +14,7 @@
         android:name=".GeneralApplication"
         tools:targetApi="33">
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.screens.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.MyMind">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:label="@string/app_name" android:name=".ui.screens.NewMoodActivity"/>
+        <activity android:label="@string/app_name" android:name=".ui.screens.newMood.NewMoodActivity"/>
 
     </application>
 

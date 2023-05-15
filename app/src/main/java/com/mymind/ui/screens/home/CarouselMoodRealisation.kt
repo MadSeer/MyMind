@@ -1,4 +1,4 @@
-package com.mymind.ui.screens
+package com.mymind.ui.screens.home
 
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout

@@ -2,6 +2,7 @@ package com.mymind
 
 import android.app.Application
 import com.mymind.di.Modules
+import com.mymind.di.Modules.appModule
 import org.koin.core.context.startKoin
 
 class GeneralApplication : Application() {
@@ -10,7 +11,8 @@ class GeneralApplication : Application() {
         startKoin {
             modules(
                 listOf(
-                    Modules.viewModelModules
+                    Modules.viewModelModules,
+                    appModule
                 )
             )
         }

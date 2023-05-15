@@ -1,14 +1,12 @@
 package com.mymind.core.base
 
-import CarouselAdapter
 import android.content.res.Resources
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.mymind.R
+import com.mymind.ui.screens.home.CarouselAdapter
 
 open class BaseCarousel(private val viewPager2: ViewPager2) {
 
