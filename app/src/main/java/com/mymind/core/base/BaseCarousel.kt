@@ -43,14 +43,4 @@ open class BaseCarousel(private val viewPager2: ViewPager2) {
         }
         viewPager2.setPageTransformer(compositePageTransformer)
     }
-
-    /*open fun tabLayoutSettings(viewPager2: ViewPager2, tabLayout: TabLayout) {
-        TabLayoutMediator(tabLayout, viewPager2) { tab, position -> }.attach()
-        viewPager2.setCurrentItem(2, false)
-    }*/
-
-    /*fun initialaseCarousel() {
-        viewPagerSettings(viewPager2)
-        tabLayoutSettings(viewPager2, tabLayout)
-    }*/
 }
