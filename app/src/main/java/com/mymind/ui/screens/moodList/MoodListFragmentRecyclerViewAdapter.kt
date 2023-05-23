@@ -12,6 +12,7 @@ import io.realm.kotlin.query.RealmResults
 
 class MoodListFragmentRecyclerViewAdapter(
     private var dataBase: RealmResults<UserMoodModel>,
+    var callback: (UserMoodModel) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -44,6 +45,11 @@ class MoodListFragmentRecyclerViewAdapter(
         commentaryTextView.text = moodCardData.commentary
         timeTextView.text = "${moodCardData.hour}:${moodCardData.minute}"
         dateTextView.text = moodCardData.date
+
+        viewHolder.itemView.setOnLongClickListener {
+            callback.invoke(moodCardData)
+            return@setOnLongClickListener true
+        }
     }
 
     override fun getItemCount(): Int {

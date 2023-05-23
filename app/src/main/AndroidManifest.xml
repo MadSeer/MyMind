@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMind"
         android:name=".GeneralApplication"
-        tools:targetApi="33">
+        tools:targetApi="28">
         <activity
             android:name=".ui.screens.home.HomeActivity"
             android:exported="true"

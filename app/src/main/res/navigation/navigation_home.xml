@@ -16,6 +16,7 @@
         android:name="com.mymind.ui.screens.moodList.MoodListFragment"
         android:label="MoodList"
         tools:layout="@layout/fragment_mood_list"/>
+
     <fragment
         android:id="@+id/statisticsFragment"
         android:name="com.mymind.ui.screens.statistics.StatisticsFragment"

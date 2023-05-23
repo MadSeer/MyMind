@@ -37,7 +37,7 @@ class DonutRealisation(var donut: DonutProgressView, var statistic: StatisticsMo
 
         val section5 = DonutSection(
             name = "section_5",
-            color = Color.parseColor("#9d4edd"), //color = R.color.statistic_4,
+            color = Color.parseColor("#9d4edd"), // color = R.color.statistic_4,
             amount = statistic.veryGood.toFloat()
         )
         donut.submitData(
