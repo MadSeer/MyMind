@@ -47,7 +47,6 @@ class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {
                 it
             ) {
                 binding.blurView.isVisible = true
-
             }
         }
         binding.recyclerViewMoodList.adapter = adapter
