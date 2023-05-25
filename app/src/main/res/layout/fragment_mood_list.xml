@@ -27,29 +27,90 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastMoods"
         app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/fragment_mood_card" />
+        tools:listitem="@layout/fragment_mood_card"
+        tools:visibility="invisible" />
 
     <eightbitlab.com.blurview.BlurView
         android:id="@+id/blurView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="46dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewMoodList"
         app:layout_constraintEnd_toEndOf="@+id/recyclerViewMoodList"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/blur_view_constraint_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@+id/fragment"
+            app:layout_constraintStart_toStartOf="@+id/fragment">
 
 
+            <ImageView
+                android:id="@+id/selected_picture_mood"
+                android:layout_width="400dp"
+                android:layout_height="272dp"
+                android:layout_marginTop="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cat_mood1" />
 
+            <TextView
+                android:id="@+id/selected_text_mood"
+                android:layout_width="354dp"
+                android:layout_height="126dp"
+                android:layout_marginTop="12dp"
+                android:text="TextView"
+                android:background="@drawable/custom_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selected_picture_mood" />
+
+            <TextView
+                android:id="@+id/textViewSelectedTime"
+                android:layout_width="88dp"
+                android:layout_height="23dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="112dp"
+                android:text="date"
+                app:layout_constraintEnd_toEndOf="@+id/selected_text_mood"
+                app:layout_constraintTop_toBottomOf="@+id/selected_text_mood" />
+
+            <TextView
+                android:id="@+id/textViewSelectedDate"
+                android:layout_width="88dp"
+                android:layout_height="23dp"
+                android:text="time"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSelectedTime"
+                app:layout_constraintEnd_toEndOf="@+id/selected_text_mood"
+                app:layout_constraintTop_toTopOf="@+id/textViewSelectedTime" />
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="88dp"
+                android:layout_height="82dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="64dp"
+                app:layout_constraintStart_toStartOf="@+id/selected_text_mood"
+                app:layout_constraintTop_toBottomOf="@+id/selected_text_mood"
+                app:srcCompat="@drawable/edit_icon" />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="94dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit"
+                app:layout_constraintEnd_toEndOf="@+id/selected_text_mood"
+                app:layout_constraintTop_toTopOf="@+id/edit"
+                app:srcCompat="@drawable/trash_icon" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </eightbitlab.com.blurview.BlurView>

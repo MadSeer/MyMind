@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager"
+                android:id="@+id/view_pager_activity_main"
                 android:layout_width="0dp"
                 android:layout_height="247dp"
                 app:layout_constraintEnd_toEndOf="@+id/timePicker1"
@@ -46,9 +46,9 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="427dp"
                 android:layout_height="16dp"
-                app:layout_constraintEnd_toEndOf="@+id/view_pager"
-                app:layout_constraintStart_toStartOf="@+id/view_pager"
-                app:layout_constraintTop_toBottomOf="@+id/view_pager"
+                app:layout_constraintEnd_toEndOf="@+id/view_pager_activity_main"
+                app:layout_constraintStart_toStartOf="@+id/view_pager_activity_main"
+                app:layout_constraintTop_toBottomOf="@+id/view_pager_activity_main"
                 app:tabBackground="@drawable/tab_selector"
                 app:tabGravity="center"
                 app:tabIndicatorHeight="0dp" />
