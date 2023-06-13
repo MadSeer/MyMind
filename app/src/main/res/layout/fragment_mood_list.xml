@@ -110,11 +110,21 @@
                 app:layout_constraintEnd_toEndOf="@+id/selected_text_mood"
                 app:layout_constraintTop_toTopOf="@+id/edit"
                 app:srcCompat="@drawable/trash_icon" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="88dp"
+                android:layout_height="81dp"
+                app:layout_constraintBottom_toBottomOf="@+id/delete"
+                app:layout_constraintEnd_toStartOf="@+id/delete"
+                app:layout_constraintStart_toEndOf="@+id/edit"
+                app:layout_constraintTop_toTopOf="@+id/delete"
+                app:srcCompat="@drawable/back_icon" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </eightbitlab.com.blurview.BlurView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,10 @@
 package com.mymind.ui.screens.moodList
 
-import android.graphics.Rect
 import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.isGone
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -48,7 +46,7 @@ class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {
     }
 
     private fun handleList(
-        userMoodModels: RealmResults<UserMoodModel>?
+        userMoodModels: RealmResults<UserMoodModel>?,
     ) {
         val adapter = userMoodModels?.let {
             MoodListFragmentRecyclerViewAdapter(
@@ -87,33 +85,28 @@ class MoodListFragment : BaseFragment<FragmentMoodListBinding>() {
                     ${it.hour}:${it.minute}
                 """.trimIndent()
 
-                binding
-                    .blurViewConstraintLayout
-                    .setOnTouchListener { v, event ->
-                        when (event.action) {
-                            MotionEvent.ACTION_UP -> {
-                                val x = event.x
-                                val y = event.y
-                                var rect = Rect()
-                                binding.selectedTextMood.getGlobalVisibleRect(rect)
-                                /*binding.selectedPictureMood.getGlobalVisibleRect(rect)
-                                binding.textViewSelectedTime.getGlobalVisibleRect(rect)
-                                binding.textViewSelectedDate.getGlobalVisibleRect(rect)*/
-                                if (!rect.contains(x.toInt(), y.toInt())) {
-                                    binding.blurView.isGone = true
-                                    mainViewPager!!.isUserInputEnabled = true
-                                    mainTabLayout!!.isGone = false
-                                }
-                            }
-                        }
-                        false
-                    }
+                binding.back.setOnClickListener {
+                    binding.blurView.isGone = true
+                    mainViewPager!!.isUserInputEnabled = true
+                    mainTabLayout!!.isGone = false
+                }
+
+                val model = it
+                binding.delete.setOnClickListener {
+                    binding.blurView.isGone = true
+                    mainViewPager!!.isUserInputEnabled = true
+                    mainTabLayout!!.isGone = false
+                    viewModel.delete(model.id)
+                }
             }
         }
+
         binding.recyclerViewMoodList.adapter = adapter
         binding.recyclerViewMoodList.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun returnToList() {
-    }
+    /*fun restart(){
+        var tr = FragmentActivity().supportFragmentManager
+        tr.beginTransaction().detach()
+    }*/
 }
