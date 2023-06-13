@@ -1,18 +1,13 @@
 package com.mymind.core
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.query.RealmResults
 import io.realm.kotlin.types.RealmUUID
+import kotlinx.coroutines.runBlocking
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 class Database {
 
@@ -53,7 +48,7 @@ class Database {
         }
     }
 
-    fun deleteMood(uuid: RealmUUID) = CoroutineScope(Dispatchers.IO).launch {
+    fun deleteMood(uuid: RealmUUID) = runBlocking {
         realm.write {
             val user = this.query<UserMoodModel>("id == $0", uuid)
                 .find()

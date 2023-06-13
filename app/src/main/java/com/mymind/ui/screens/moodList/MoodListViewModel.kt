@@ -6,9 +6,10 @@ import com.mymind.core.Database
 import com.mymind.core.UserMoodModel
 import io.realm.kotlin.query.RealmResults
 import io.realm.kotlin.types.RealmUUID
-import java.util.UUID
 
-class MoodListViewModel(private val database: Database) : ViewModel() {
+class MoodListViewModel(
+    private val database: Database
+) : ViewModel() {
 
     val mooddbLiveData: MutableLiveData<RealmResults<UserMoodModel>> = MutableLiveData()
 
@@ -19,5 +20,6 @@ class MoodListViewModel(private val database: Database) : ViewModel() {
 
     fun delete(uuid: RealmUUID) {
         database.deleteMood(uuid)
+        getList()
     }
 }
