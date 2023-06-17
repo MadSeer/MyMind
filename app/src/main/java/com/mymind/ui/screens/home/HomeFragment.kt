@@ -18,7 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     ) = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
     override fun FragmentHomeBinding.initializeLayout() {
-
         button.setOnClickListener {
             val intent = Intent(activity, NewMoodActivity::class.java)
             activity?.startActivity(intent)

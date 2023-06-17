@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment <T : ViewBinding> : Fragment() {
+abstract class BaseFragment<T : ViewBinding> : Fragment() {
     protected lateinit var binding: T
 
     protected val parentActivity: BaseActivity<*> by lazy { requireActivity() as BaseActivity<*> }

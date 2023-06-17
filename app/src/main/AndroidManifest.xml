@@ -25,6 +25,8 @@
         </activity>
 
         <activity android:label="@string/app_name" android:name=".ui.screens.newMood.NewMoodActivity"/>
+        <activity android:label="@string/app_name"
+            android:name=".ui.screens.moodList.editMood.ChangeMoodActivity"/>
 
     </application>
 

@@ -49,12 +49,13 @@ class Blur(
         val model = it
         back(mainViewPager!!, mainTabLayout!!)
         delete(mainViewPager!!, mainTabLayout!!, model)
+        edit(mainViewPager!!, mainTabLayout!!)
     }
 
     private fun delete(
         mainViewPager: ViewPager2,
         mainTabLayout: TabLayout,
-        model: UserMoodModel,
+        model: UserMoodModel
     ) {
         binding.delete.setOnClickListener {
             callback.invoke("delete")
@@ -70,6 +71,18 @@ class Blur(
         mainTabLayout: TabLayout
     ) {
         binding.back.setOnClickListener {
+            binding.blurView.isGone = true
+            mainViewPager!!.isUserInputEnabled = true
+            mainTabLayout!!.isGone = false
+        }
+    }
+
+    private fun edit(
+        mainViewPager: ViewPager2,
+        mainTabLayout: TabLayout
+    ) {
+        binding.edit.setOnClickListener {
+            callback.invoke("edit")
             binding.blurView.isGone = true
             mainViewPager!!.isUserInputEnabled = true
             mainTabLayout!!.isGone = false

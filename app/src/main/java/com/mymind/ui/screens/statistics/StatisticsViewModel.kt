@@ -6,7 +6,6 @@ import app.futured.donut.DonutProgressView
 import com.mymind.core.Database
 import com.mymind.core.UserMoodModel
 import io.realm.kotlin.query.RealmResults
-import kotlinx.coroutines.coroutineScope
 
 class StatisticsViewModel(private val database: Database) : ViewModel() {
 

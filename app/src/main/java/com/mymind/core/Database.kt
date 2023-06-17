@@ -2,12 +2,13 @@ package com.mymind.core
 
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
+import io.realm.kotlin.UpdatePolicy
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.query.RealmResults
 import io.realm.kotlin.types.RealmUUID
-import kotlinx.coroutines.runBlocking
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import kotlinx.coroutines.runBlocking
 
 class Database {
 
@@ -23,11 +24,15 @@ class Database {
                 UserMoodModel().apply {
                     if (minute.length < 2) {
                         this.minute = "0" + minute
-                    } else this.minute = minute
+                    } else {
+                        this.minute = minute
+                    }
 
                     if (hour.length < 2) {
                         this.hour = "0" + hour
-                    } else this.hour = hour
+                    } else {
+                        this.hour = hour
+                    }
 
                     val dt = SimpleDateFormat("dd.MM.yyyy")
                     this.date = dt.format(Calendar.getInstance().time)
@@ -39,12 +44,28 @@ class Database {
         }
     }
 
-    fun changeMood(uuid: UUID) {
+    fun changeMood(model: UserMoodModel) = runBlocking {
+        // deleteMood(model.id)
         realm.writeBlocking {
-            realm.query<UserMoodModel>("id == %0", uuid.toString())
-                .first()
-                .apply {
-                }
+            copyToRealm(
+                model.apply {
+                    if (minute.length < 2) {
+                        this.minute = "0" + model.minute
+                    } else {
+                        this.minute = model.minute
+                    }
+                    if (hour.length < 2) {
+                        this.hour = "0" + model.hour
+                    } else {
+                        this.hour = model.hour
+                    }
+                    this.id = model.id
+                    this.date = model.date
+                    this.mood = model.mood
+                    this.commentary = model.commentary
+                },
+                updatePolicy = UpdatePolicy.ALL
+            )
         }
     }
 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/moodCreateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TimePicker
+                android:id="@+id/timePicker1"
+                android:layout_width="411dp"
+                android:layout_height="219dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="48dp"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_activity_main"
+                android:layout_width="0dp"
+                android:layout_height="247dp"
+                app:layout_constraintEnd_toEndOf="@+id/timePicker1"
+                app:layout_constraintStart_toStartOf="@+id/timePicker1"
+                app:layout_constraintTop_toBottomOf="@+id/timePicker1" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="427dp"
+                android:layout_height="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/view_pager_activity_main"
+                app:layout_constraintStart_toStartOf="@+id/view_pager_activity_main"
+                app:layout_constraintTop_toBottomOf="@+id/view_pager_activity_main"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp" />
+
+            <EditText
+                android:id="@+id/moodCommentaryPlainText"
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+                app:layout_constraintVertical_bias="0.261" />
+
+            <Button
+                android:id="@+id/writeMood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Write down"
+                app:layout_constraintEnd_toEndOf="@+id/moodCommentaryPlainText"
+                app:layout_constraintStart_toStartOf="@+id/moodCommentaryPlainText"
+                app:layout_constraintTop_toBottomOf="@+id/moodCommentaryPlainText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

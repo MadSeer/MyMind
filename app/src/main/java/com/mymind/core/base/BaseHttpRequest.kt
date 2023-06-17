@@ -19,24 +19,25 @@ abstract class BaseHttpRequest {
             .addHeader("X-Api-Key", this.apikey)
             .build()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                Log.e("error", "API failed", e)
-                callback("Something went wrong")
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                if (body != null) {
-                    Log.v("data", body)
-                } else {
-                    Log.v("data", "empty")
+        client.newCall(request).enqueue(
+            object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    Log.e("error", "API failed", e)
+                    callback("Something went wrong")
                 }
-                val jsonObject = JSONArray(body)
-                val textResult = jsonObject.getJSONObject(0).getString(gettingFieldName)
-                callback(textResult)
+
+                override fun onResponse(call: Call, response: Response) {
+                    val body = response.body?.string()
+                    if (body != null) {
+                        Log.v("data", body)
+                    } else {
+                        Log.v("data", "empty")
+                    }
+                    val jsonObject = JSONArray(body)
+                    val textResult = jsonObject.getJSONObject(0).getString(gettingFieldName)
+                    callback(textResult)
+                }
             }
-        }
         )
     }
 }

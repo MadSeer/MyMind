@@ -22,4 +22,7 @@ class MoodListViewModel(
         database.deleteMood(uuid)
         getList()
     }
+
+    fun edit(model: UserMoodModel) {
+    }
 }

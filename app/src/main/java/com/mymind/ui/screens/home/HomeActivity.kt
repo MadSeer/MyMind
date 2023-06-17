@@ -18,14 +18,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override fun ActivityHomeBinding.initializeLayout() {
         viewPagerActivityMain.adapter = HomeCarouselRealisation(supportFragmentManager, lifecycle)
 
-        val icons = listOf<Int>(
+        val icons = listOf(
             R.drawable.tab_menu_0,
             R.drawable.tab_menu_1,
             R.drawable.tab_menu_2
         )
 
         TabLayoutMediator(tabLayout, viewPagerActivityMain) { tab, position ->
-            val drawNum = "tab_menu_" + "$position"
+            // val drawNum = "tab_menu_" + "$position"
             tab.icon = ContextCompat.getDrawable(
                 this@HomeActivity,
                 icons[position]
